@@ -1,0 +1,51 @@
+---
+title: "LinkedinJobs"
+output: html_notebook
+---
+
+# Bibliotecas
+
+```{r, echo=FALSE}
+if(!require("httr")) install.packages("httr")
+if(!require("rvest")) install.packages("rvest")
+if(!require("tidyverse")) install.packages("tidyverse")
+```
+
+# DataFrame
+
+```{r}
+vagas <- data.frame()
+```
+
+### Testes
+```{r}
+# https://www.linkedin.com/jobs/search?keywords=python&location=Rio%20de%20Janeiro%2C%20Rio%20de%20Janeiro%2C%20Brasil&trk=public_jobs_jobs-search-bar_search-submit&redirect=false&position=1&pageNum=0
+
+url <- function(vaga, local){
+  url.base <- "https://www.linkedin.com/jobs/search?"
+  url.vaga <- paste0("keywords=", vaga)
+  url.local <- paste0("location=", str_replace_all(local, " ", "%20"))
+  return(paste0(url.base,
+                url.vaga,
+                url.local))
+}
+
+# Sessao
+linkedin <- html_session("https://www.linkedin.com/jobs")
+
+
+formulario <- html_form(linkedin)[[3]] 
+formulario$fields$keywords$value <- "python"
+formulario$fields$location$value <- "rio de janeiro"
+
+linkedin <- submit_form(linkedin, formulario)
+
+vagas <- html_nodes(linkedin, "ul")[13] %>% html_nodes("li")
+```
+
+```{r}
+local <- "Rio de janeiro"
+
+
+```
+
