@@ -54,4 +54,21 @@ vagas
 ```
 
 
+### Formulario para estudar
+
+**Entender a lista [[4]]**
+
+- Seguimento 1: Relevante | Recente
+- Seguimento 2: Ultimas 24 horas | Ultima semana | Ultimo mes | Qualquer momento
+- Seguimento 3 Empresa
+- Seguimento 4: Localidade
+- Seguimento 5: Tempo Integral | Outro | Estagio | Contrato | Meio periodo
+- Seguimento 6: Pleno Senior | Assistente | Junior | Estagio | Diretor
+
+```{r}
+formulario.novo <- html_form(linkedin)
+formulario.novo[[4]]
+```
+
+
 
