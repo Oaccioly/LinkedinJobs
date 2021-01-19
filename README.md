@@ -12,9 +12,12 @@ Problemas do linkedin
 
 ## Funcionalidades
 - Possibilidade de pesquisar uma vaga pelo seu titulo e localidade.
+- Interface Dashboard amigavel.
+- Filtros personalizados.
 - Capacidade de julgar veracidade de vagas.
 - Levantamento de plataformas mais utilizadas para a candidatura.
 - Levantamento de requisitos mais pedidos pelas vagas da pesquisa.
+- Gerar graficos a partir dos levantamentos.
 
 ## Descriçao
 O projeto LinkedinJobs esta sendo desenvolvido para se tornar uma Dashboard que julga a veracidade das vagas do Linkedin.
