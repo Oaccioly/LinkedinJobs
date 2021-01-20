@@ -6,7 +6,7 @@ output: html_notebook
 ### Bibliotecas
 - Rvest
 - Httr
-- Tydeverse
+- Tidyverse
 ```{r, include=F}
 if(!require("httr")) install.packages("httr")
 if(!require("rvest")) install.packages("rvest")
@@ -71,6 +71,9 @@ vagas_
 ```
 
 ### Function Buscador anonimo
+
+Buscador anonimo nao precisa de conta logada.
+Inicialmente o projeto deve atenter a possibilidade de nao precisar de conta.
 ```{r}
 
 Buscador <- function(Vaga, Local) {
@@ -98,7 +101,7 @@ CHECK LIST
 - Link de referencia Href :)
 - Descricao da vaga :)
 - Foto da empresa :)
-- Plataforma utilizada para processo de candidatura
+- Plataforma utilizada para processo de candidatura:)
 - Numero de candidaturas :)
 - Nivel da vaga :)
 - Tipo de contrato :)
@@ -113,7 +116,7 @@ empresa <- html_node(vagas, "div h4 a") %>% html_text()
 link <- html_node(vagas, "a") %>% html_attr("href")
 tempo <- html_node(vagas, "time") %>% html_text()
 
-href <- GET(link[4]) %>% 
+href <- GET(link[20]) %>% 
           read_html()  
 
 foto <- html_nodes(href, "a img") %>% html_attr("data-delayed-url")
@@ -121,8 +124,75 @@ candidaturas <- html_nodes(href, "h3 span")[4] %>% html_text()
 descricao.raw <- html_nodes(href, "section div section div")[14]
 nivel <- html_nodes(href, "li span")[3] %>% html_text()
 tipo <- html_nodes(href, "li span")[4] %>% html_text()
-
 ```
+
+### Extrator de nome das plataformas 
+
+Ainda deve ser testado para comprovar eficiencia.
+Consegue separar plataformas comuns e sites proprios de empresas.
+```{r}
+plataformas.comuns <- c("gupy", "kenoby", "infojobs", "careers",
+                        "solides", "abler", "vagas", "jooble")
+
+# plataformas <- data.frame(Plataforma = "")
+
+Extrator <- function(vagas){
+  
+                  for(vaga in vagas){
+                    Sys.sleep(0.3)
+                    href <- html_node(vaga, "a") %>% html_attr("href") %>% 
+                              GET() %>% 
+                              read_html()
+                    
+                    vaga.link <- html_node(href, xpath = "/html/body/main/section[1]/section[2]/div[1]/div[2]/a") %>% 
+                                  html_attr("href")
+                    
+                    if(is.na(vaga.link)){
+                      print("easy apply")
+                      
+                    }else{
+                      Extrator_regex(vaga.link)
+                      
+                    }
+                  }
+}
+
+Extrator_regex <- function(link){
+                    cond <- F
+                    if(is.na(link)){next()}
+                    
+                    for(plataforma in plataformas.comuns){
+                      
+                      if(!is.na(str_extract(link, plataforma))){
+                        cond <- T
+                        break()
+                      }
+                    }
+                    
+                    if(cond){
+                      print(plataforma)
+                      
+                    }else{
+                      pos <- str_locate(link, c("htt[ps]*%3A%2F%2F", "%2Ecom"))
+                      link <- substring(link, pos[3]+1, pos[2]-1)
+                      pos2 <- str_locate(link, "2E")
+                      
+                      if(is.na(pos2[2])){
+                        print(link)
+                        
+                        
+                      }else{
+                        link <- substring(link, pos2[2]+1)
+                        print(link)
+                      }
+                    }
+}
+
+
+Extrator(vagas)
+```
+
+
 
 ## Minerador
 ```{r}
