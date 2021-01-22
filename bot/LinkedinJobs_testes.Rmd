@@ -118,8 +118,11 @@ empresa <- html_node(vagas_, "div h4 a") %>% html_text()
 link <- html_node(vagas_, "a") %>% html_attr("href")
 tempo <- html_node(vagas_, "time") %>% html_text()
 
-href <- GET(link[20]) %>% 
+href <- GET(link[0]) %>% 
           read_html()  
+
+href <- html_node(href, xpath = "/html/body/main/section[1]/section[2]/div[1]/div[2]/a") %>% 
+          html_attr("href")
 
 foto <- html_nodes(href, "a img") %>% html_attr("data-delayed-url")
 candidaturas <- html_nodes(href, "h3 span")[4] %>% html_text()
@@ -158,26 +161,32 @@ Extrator <- function(vagas){
 
 Extrator_regex <- function(link){
                     cond <- F
-                    if(is.na(link)){next()}
                     
-                    for(plataforma in plataformas.comuns){
+                    vaga.link <- html_node(link, xpath = "/html/body/main/section[1]/section[2]/div[1]/div[2]/a") %>% 
+                                  html_attr("href")
+                    
+                    if(is.na(vaga.link)){
+                      print("easy apply")
                       
-                      if(!is.na(str_extract(link, plataforma))){
-                        cond <- T
-                        break()
+                    }else{
+                      for(plataforma in plataformas.comuns){
+                      
+                        if(!is.na(str_extract(link, plataforma))){
+                          cond <- T
+                          break()
                       }
                     }
                     
-                    if(cond){
-                      return(link)
-                      
-                    }else{
-                      pos <- str_locate(link, c("htt[ps]*%3A%2F%2F", "%2Ecom"))
-                      link <- substring(link, pos[3]+1, pos[2]-1)
-                      pos2 <- str_locate(link, "2E")
-                      
-                      if(is.na(pos2[2])){
+                      if(cond){
                         return(link)
+                        
+                      }else{
+                        pos <- str_locate(link, c("htt[ps]*%3A%2F%2F", "%2Ecom"))
+                        link <- substring(link, pos[3]+1, pos[2]-1)
+                        pos2 <- str_locate(link, "2E")
+                      
+                        if(is.na(pos2[2])){
+                          return(link)
                         
                         
                       }else{
@@ -185,7 +194,15 @@ Extrator_regex <- function(link){
                         return(link)
                       }
                     }
+                  }
+                    
+                    
 }
+Extrator(vagas.raw)
+
+href <- GET(link) %>% read_html()
+vaga.link <- html_node(href, xpath = "/html/body/main/section[1]/section[2]/div[1]/div[2]/a") %>% html_attr("href")
+Extrator_regex(vaga.link)
 ```
 
 ## Minerador
@@ -206,7 +223,8 @@ Minerador <- function(sessao){
                     
                     str_sub(sessao.url, f_E.pos[2], f_E.pos[2], T) <- E
                     
-                    vagas.raw <- html_nodes(sessao, xpath = "/html/body/main/div/section[2]/ul/li")
+                    vagas.raw <- read_html(sessao.url) %>% 
+                                  html_nodes(xpath = "/html/body/main/div/section[2]/ul/li")
                   }
                 }
                 
@@ -233,6 +251,7 @@ Minerador <- function(sessao){
 Buscador("Python", "Rio de janeiro") %>% 
   Minerador()
 ```
+
 ```{r}
 rbind(data.frame(nome = "Gabriel"), data.frame(nome = "May"))
 ```

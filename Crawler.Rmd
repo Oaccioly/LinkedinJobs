@@ -29,6 +29,10 @@ if(!require("tidyverse")) install.packages("tidyverse")
 - Nivel da vaga
 - Tipo de contrato
 
+**Problema na armazenagem do Href e Descricao.raw**
+
+**Solucao usar o metodo toString**
+
 ```{r}
 vagas <- data.frame(Titulo = "", 
                     Localidade = "",
@@ -68,103 +72,123 @@ Buscador <- function(Vaga, Local) {
 ### Function Extrator de plataformas
 ```{r}
 
-Extrator <- function(vagas){
-                  plataformas.comuns <- c("gupy", "kenoby", "infojobs", "careers",
-                                          "solides", "abler", "vagas", "jooble")
-  
-                  for(vaga in vagas){
-                    Sys.sleep(0.3)
-                    href <- html_node(vaga, "a") %>% html_attr("href") %>% 
-                              GET() %>% 
-                              read_html()
+Extrator <- function(link){
+                    cond <- F
+                    plataformas.comuns <- c("gupy", "kenoby", "infojobs", "careers",
+                                            "solides", "abler", "vagas", "jooble", "revelo")
                     
-                    vaga.link <- html_node(href, xpath = "/html/body/main/section[1]/section[2]/div[1]/div[2]/a") %>% 
+                    vaga.link <- html_node(link, xpath = "/html/body/main/section[1]/section[2]/div[1]/div[2]/a") %>% 
                                   html_attr("href")
                     
                     if(is.na(vaga.link)){
-                      print("easy apply")
+                      return("easy apply")
                       
                     }else{
-                      Extrator_regex(vaga.link)
-                    }
-                  }
-}
-
-Extrator_regex <- function(link){
-                    cond <- F
-                    if(is.na(link)){next()}
-                    
-                    for(plataforma in plataformas.comuns){
                       
-                      if(!is.na(str_extract(link, plataforma))){
-                        cond <- T
-                        break()
+                      for(plataforma in plataformas.comuns){
+                        
+                        if(!is.na(str_extract(vaga.link, plataforma))){
+                          cond <- T
+                          break()
                       }
                     }
                     
-                    if(cond){
-                      return(link)
-                      
-                    }else{
-                      pos <- str_locate(link, c("htt[ps]*%3A%2F%2F", "%2Ecom"))
-                      link <- substring(link, pos[3]+1, pos[2]-1)
-                      pos2 <- str_locate(link, "2E")
-                      
-                      if(is.na(pos2[2])){
-                        return(link)
-                        
+                      if(cond){
+                        return(plataforma)
                         
                       }else{
-                        link <- substring(link, pos2[2]+1)
-                        return(link)
-                      }
+                        pos <- str_locate(vaga.link, c("htt[ps]*%3A%2F%2F", "%2Ecom"))
+                        link <- substring(vaga.link, pos[3]+1, pos[2]-1)
+                        pos2 <- str_locate(vaga.link, "2E")
+                      
+                        if(is.na(pos2[2])){
+                          return(link)
+                        
+                        
+                        }else{
+                          link <- substring(vaga.link, pos2[2]+1)
+                          return(link)
+                        }
                     }
+                  }
+                    
+                    
 }
 ```
 
-### Funtion Minerador
+### Function Minerador
 ```{r}
-f_TPR <- c("86400", "604800", "2592000")
-f_E <- c("1", "2", "3", "4", "5", "6")
 
 Minerador <- function(sessao){
-                sessao.url <- sessao$url
-                str_sub(sessao.url, 38, 37, T) <- "f_E=1&f_TP=1&f_TPR=r0&"
+                url <- sessao$url
+                str_sub(url, 38, 37, T) <- "f_E=1&f_TP=1&f_TPR=r0&"
+                f_TPR <- c("86400", "604800", "2592000")
+                f_E <- c("1", "2", "3", "4", "5", "6")
                 
                 for(TPR in f_TPR){
-                  f_TPR.pos <- str_locate(sessao.url, "f_TPR=r[0-9]*")
-                  str_sub(sessao.url, f_TPR.pos[1]+7, f_TPR.pos[2], T) <- TPR
+                  f_TPR.pos <- str_locate(url, "f_TPR=r[0-9]*")
+                  str_sub(url, f_TPR.pos[1]+7, f_TPR.pos[2], T) <- TPR
                   
                   for(E in f_E){
-                    f_E.pos <- str_locate(sessao.url, "f_E=[0-9]*")
+                    f_E.pos <- str_locate(url, "f_E=[0-9]*")
                     
-                    str_sub(sessao.url, f_E.pos[2], f_E.pos[2], T) <- E
-                    
-                    vagas.raw <- html_nodes(sessao.url, xpath = "/html/body/main/div/section[2]/ul/li")
-                  }
+                    str_sub(url, f_E.pos[2], f_E.pos[2], T) <- E
+                    print(url)
+                    #vagas.raw <- read_html(url) %>% 
+                    #              html_nodes(xpath = "/html/body/main/div/section[2]/ul/li")
                 }
-                
-                for(vaga in vagas.raw){
-                  Sys.sleep(0.5)
-                  
-                  
-                  nome <- html_node(vaga, "a span") %>% html_text()
-                  local <- html_node(vaga, "div span") %>% html_text()
-                  empresa <- html_node(vaga, "div h4 a") %>% html_text()
-                  tempo <- html_node(vaga, "time") %>% html_text()
-                  link <- html_node(vaga, "a") %>% html_attr("href")
-                  
-                  href <- GET(link) %>% read_html()
-                  
-                  foto <- html_node(href, "a img") %>% html_attr("data-delayed-url")
-                  candidaturas <- html_nodes(href, "h3 span")[4] %>% html_text()
-                  descricao.raw <- html_nodes(href, "section div section div")[14]
-                  nivel <- html_nodes(href, "li span")[3] %>% html_text()
-                  tipo <- html_nodes(href, "li span")[4] %>% html_text()
-                }
+              }
 }
 
-Buscador("Python", "Rio de janeiro") %>% 
-  Minerador()
+sessao <- Buscador("Python", "Rio de janeiro")
+Minerador(sessao)
+```
+```{r}
+url <- "https://www.linkedin.com/jobs/search?f_E=4&f_TP=1&f_TPR=r2592000&keywords=Python&location=Rio%20de%20janeiro&trk=homepage-jobseeker_jobs-search-bar_search-submit"
+
+vagas.raw <- read_html(url) %>% 
+                html_nodes(xpath = "/html/body/main/div/section[2]/ul/li")
+
+for(vaga in vagas.raw){
+    Sys.sleep(0.5)
+
+    nome <- html_node(vaga, "a span") %>% html_text()
+    local <- html_node(vaga, "div span") %>% html_text()
+    empresa <- html_node(vaga, "div h4 a") %>% html_text()
+    tempo <- html_node(vaga, "time") %>% html_text()
+    print(tempo)
+    link <- html_node(vaga, "a") %>% html_attr("href")
+    
+    href <- GET(link) %>% read_html()
+    #plataforma <- Extrator(href)
+    foto <- html_node(href, "a img") %>% html_attr("data-delayed-url")
+    print(foto)
+    #candidaturas <- html_nodes(href, "h3 span")[4] %>% html_text()
+    descricao.raw <- html_nodes(href, "section div section div")[14] %>% toString()
+    nivel <- html_nodes(href, "li span")[3] %>% html_text()
+    tipo <- html_nodes(href, "li span")[4] %>% html_text()
+    
+}
+```
+
+
+```{r}
+rbind(vagas, 
+      data.frame(
+                Titulo = nome, 
+                Localidade = local,
+                Noma_da_empresa = empresa,
+                Data_de_postagem = tempo,
+                Href = "href",
+                Foto_da_empresa = foto,
+                Plataforma = "",
+                Numero_de_candidaturas = "candidaturas",
+                Descricao.raw = "descricao.raw",
+                Nivel = nivel,
+                Tipo = tipo,
+                Link = link))
+
+teste <- html_nodes(href, "section div section div")[14]
+
 ```
 

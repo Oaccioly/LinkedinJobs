@@ -1785,6 +1785,8 @@ summary {
 <li>Nivel da vaga</li>
 <li>Tipo de contrato</li>
 </ul>
+<p><strong>Problema na armazenagem do Href e Descricao.raw</strong></p>
+<p><strong>Solucao usar o metodo toString</strong></p>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
 <!-- rnb-source-begin eyJkYXRhIjoiYGBgclxudmFnYXMgPC0gZGF0YS5mcmFtZShUaXR1bG8gPSBcIlwiLCBcbiAgICAgICAgICAgICAgICAgICAgTG9jYWxpZGFkZSA9IFwiXCIsXG4gICAgICAgICAgICAgICAgICAgIE5vbWFfZGFfZW1wcmVzYSA9IFwiXCIsXG4gICAgICAgICAgICAgICAgICAgIERhdGFfZGVfcG9zdGFnZW0gPSBcIlwiLFxuICAgICAgICAgICAgICAgICAgICBIcmVmID0gXCJcIixcbiAgICAgICAgICAgICAgICAgICAgRm90b19kYV9lbXByZXNhID0gXCJcIixcbiAgICAgICAgICAgICAgICAgICAgUGxhdGFmb3JtYSA9IFwiXCIsXG4gICAgICAgICAgICAgICAgICAgIE51bWVyb19kZV9jYW5kaWRhdHVyYXMgPSBcIlwiLFxuICAgICAgICAgICAgICAgICAgICBEZXNjcmljYW8ucmF3ID0gXCJcIixcbiAgICAgICAgICAgICAgICAgICAgTml2ZWwgPSBcIlwiLFxuICAgICAgICAgICAgICAgICAgICBUaXBvID0gXCJcIixcbiAgICAgICAgICAgICAgICAgICAgTGluayA9IFwiXCIpXG52YWdhc1xuYGBgIn0= -->
@@ -1802,6 +1804,13 @@ summary {
                     Link = &quot;&quot;)
 vagas</code></pre>
 <!-- rnb-source-end -->
+<!-- rnb-frame-begin eyJtZXRhZGF0YSI6eyJjbGFzc2VzIjpbImRhdGEuZnJhbWUiXSwibmNvbCI6MTIsIm5yb3ciOjF9LCJyZGYiOiJINHNJQUFBQUFBQUFBKzFVd1dvQ01SQ051bXR4MFNvVStoZnVwVDMwQTBSNkVDbkZnamVaWnJNMm1NMHNTYmIyNjIxbnR4dXAwUzhvSGtJbUwyL201VTFJWG1mcmgyU2RNTVo2ck5lbkVWUEk0cmZWZlByRVdOU2xSWWRGYkZEUFgwUzZvMkJJODZqWmFNWUpxYS9FcDFDV29za2ZsQVdzbUN1d0lhbWZBM2RvS0RxY0MzUy9MNWZzaGZpMXlyWEt2Nmh5K21BMEZNSS9tS0ducjZTckZMYXJaSUVjbE13Z0V5MHlYbUlCbXd3Mm9paU5zTkRDa3hrNGdzV21ST3RnSzRvV2o1Nk55SDNxSEIyZXB5WXZpbkp6TklWSDdwZFZJUXpXNVRqb2pPUmRaY0MydTZPWnNOeElEcGdhMkhzdlMwbGZoQmRkeWRJN2lCWlM3d0xqQTRQNzFKc1ArbnJXdjRUVUljME4wUy8wOEFaTEoxRlRvVzc5aThWQmNzY0V3TGpTdFhBMjVSK1YzazBmYTRIMkFPejBNTWQ0K0NzWitZUEYvcWFFM2tydDd5Vlc4SDVzd0MwWmJQeWxwWkhhZVNlRTJ0U2hBODlMT0NxUE5ON1k0UWNZeG5Ja3ZBVUFBQT09In0= -->
+<div data-pagedtable="false">
+<script data-pagedtable-source type="application/json">
+{"columns":[{"label":["Titulo"],"name":[1],"type":["fctr"],"align":["left"]},{"label":["Localidade"],"name":[2],"type":["fctr"],"align":["left"]},{"label":["Noma_da_empresa"],"name":[3],"type":["fctr"],"align":["left"]},{"label":["Data_de_postagem"],"name":[4],"type":["fctr"],"align":["left"]},{"label":["Href"],"name":[5],"type":["fctr"],"align":["left"]},{"label":["Foto_da_empresa"],"name":[6],"type":["fctr"],"align":["left"]},{"label":["Plataforma"],"name":[7],"type":["fctr"],"align":["left"]},{"label":["Numero_de_candidaturas"],"name":[8],"type":["fctr"],"align":["left"]},{"label":["Descricao.raw"],"name":[9],"type":["fctr"],"align":["left"]},{"label":["Nivel"],"name":[10],"type":["fctr"],"align":["left"]},{"label":["Tipo"],"name":[11],"type":["fctr"],"align":["left"]},{"label":["Link"],"name":[12],"type":["fctr"],"align":["left"]}],"data":[{"1":"","2":"","3":"","4":"","5":"","6":"","7":"","8":"","9":"","10":"","11":"","12":""}],"options":{"columns":{"min":{},"max":[10],"total":[12]},"rows":{"min":[10],"max":[10],"total":[1]},"pages":{}}}
+  </script>
+</div>
+<!-- rnb-frame-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
 <div id="function-buscador-anonimo" class="section level3">
@@ -1830,119 +1839,136 @@ Buscador &lt;- function(Vaga, Local) {
 <h3>Function Extrator de plataformas</h3>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuXG5FeHRyYXRvciA8LSBmdW5jdGlvbih2YWdhcyl7XG4gICAgICAgICAgICAgICAgICBwbGF0YWZvcm1hcy5jb211bnMgPC0gYyhcImd1cHlcIiwgXCJrZW5vYnlcIiwgXCJpbmZvam9ic1wiLCBcImNhcmVlcnNcIixcbiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIFwic29saWRlc1wiLCBcImFibGVyXCIsIFwidmFnYXNcIiwgXCJqb29ibGVcIilcbiAgXG4gICAgICAgICAgICAgICAgICBmb3IodmFnYSBpbiB2YWdhcyl7XG4gICAgICAgICAgICAgICAgICAgIFN5cy5zbGVlcCgwLjMpXG4gICAgICAgICAgICAgICAgICAgIGhyZWYgPC0gaHRtbF9ub2RlKHZhZ2EsIFwiYVwiKSAlPiUgaHRtbF9hdHRyKFwiaHJlZlwiKSAlPiUgXG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgICBHRVQoKSAlPiUgXG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgICByZWFkX2h0bWwoKVxuICAgICAgICAgICAgICAgICAgICBcbiAgICAgICAgICAgICAgICAgICAgdmFnYS5saW5rIDwtIGh0bWxfbm9kZShocmVmLCB4cGF0aCA9IFwiL2h0bWwvYm9keS9tYWluL3NlY3Rpb25bMV0vc2VjdGlvblsyXS9kaXZbMV0vZGl2WzJdL2FcIikgJT4lIFxuICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIGh0bWxfYXR0cihcImhyZWZcIilcbiAgICAgICAgICAgICAgICAgICAgXG4gICAgICAgICAgICAgICAgICAgIGlmKGlzLm5hKHZhZ2EubGluaykpe1xuICAgICAgICAgICAgICAgICAgICAgIHByaW50KFwiZWFzeSBhcHBseVwiKVxuICAgICAgICAgICAgICAgICAgICAgIFxuICAgICAgICAgICAgICAgICAgICB9ZWxzZXtcbiAgICAgICAgICAgICAgICAgICAgICBFeHRyYXRvcl9yZWdleCh2YWdhLmxpbmspXG4gICAgICAgICAgICAgICAgICAgIH1cbiAgICAgICAgICAgICAgICAgIH1cbn1cblxuRXh0cmF0b3JfcmVnZXggPC0gZnVuY3Rpb24obGluayl7XG4gICAgICAgICAgICAgICAgICAgIGNvbmQgPC0gRlxuICAgICAgICAgICAgICAgICAgICBpZihpcy5uYShsaW5rKSl7bmV4dCgpfVxuICAgICAgICAgICAgICAgICAgICBcbiAgICAgICAgICAgICAgICAgICAgZm9yKHBsYXRhZm9ybWEgaW4gcGxhdGFmb3JtYXMuY29tdW5zKXtcbiAgICAgICAgICAgICAgICAgICAgICBcbiAgICAgICAgICAgICAgICAgICAgICBpZighaXMubmEoc3RyX2V4dHJhY3QobGluaywgcGxhdGFmb3JtYSkpKXtcbiAgICAgICAgICAgICAgICAgICAgICAgIGNvbmQgPC0gVFxuICAgICAgICAgICAgICAgICAgICAgICAgYnJlYWsoKVxuICAgICAgICAgICAgICAgICAgICAgIH1cbiAgICAgICAgICAgICAgICAgICAgfVxuICAgICAgICAgICAgICAgICAgICBcbiAgICAgICAgICAgICAgICAgICAgaWYoY29uZCl7XG4gICAgICAgICAgICAgICAgICAgICAgcmV0dXJuKGxpbmspXG4gICAgICAgICAgICAgICAgICAgICAgXG4gICAgICAgICAgICAgICAgICAgIH1lbHNle1xuICAgICAgICAgICAgICAgICAgICAgIHBvcyA8LSBzdHJfbG9jYXRlKGxpbmssIGMoXCJodHRbcHNdKiUzQSUyRiUyRlwiLCBcIiUyRWNvbVwiKSlcbiAgICAgICAgICAgICAgICAgICAgICBsaW5rIDwtIHN1YnN0cmluZyhsaW5rLCBwb3NbM10rMSwgcG9zWzJdLTEpXG4gICAgICAgICAgICAgICAgICAgICAgcG9zMiA8LSBzdHJfbG9jYXRlKGxpbmssIFwiMkVcIilcbiAgICAgICAgICAgICAgICAgICAgICBcbiAgICAgICAgICAgICAgICAgICAgICBpZihpcy5uYShwb3MyWzJdKSl7XG4gICAgICAgICAgICAgICAgICAgICAgICByZXR1cm4obGluaylcbiAgICAgICAgICAgICAgICAgICAgICAgIFxuICAgICAgICAgICAgICAgICAgICAgICAgXG4gICAgICAgICAgICAgICAgICAgICAgfWVsc2V7XG4gICAgICAgICAgICAgICAgICAgICAgICBsaW5rIDwtIHN1YnN0cmluZyhsaW5rLCBwb3MyWzJdKzEpXG4gICAgICAgICAgICAgICAgICAgICAgICByZXR1cm4obGluaylcbiAgICAgICAgICAgICAgICAgICAgICB9XG4gICAgICAgICAgICAgICAgICAgIH1cbn1cbmBgYCJ9 -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuXG5FeHRyYXRvciA8LSBmdW5jdGlvbihsaW5rKXtcbiAgICAgICAgICAgICAgICAgICAgY29uZCA8LSBGXG4gICAgICAgICAgICAgICAgICAgIHBsYXRhZm9ybWFzLmNvbXVucyA8LSBjKFwiZ3VweVwiLCBcImtlbm9ieVwiLCBcImluZm9qb2JzXCIsIFwiY2FyZWVyc1wiLFxuICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBcInNvbGlkZXNcIiwgXCJhYmxlclwiLCBcInZhZ2FzXCIsIFwiam9vYmxlXCIsIFwicmV2ZWxvXCIpXG4gICAgICAgICAgICAgICAgICAgIFxuICAgICAgICAgICAgICAgICAgICB2YWdhLmxpbmsgPC0gaHRtbF9ub2RlKGxpbmssIHhwYXRoID0gXCIvaHRtbC9ib2R5L21haW4vc2VjdGlvblsxXS9zZWN0aW9uWzJdL2RpdlsxXS9kaXZbMl0vYVwiKSAlPiUgXG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgaHRtbF9hdHRyKFwiaHJlZlwiKVxuICAgICAgICAgICAgICAgICAgICBcbiAgICAgICAgICAgICAgICAgICAgaWYoaXMubmEodmFnYS5saW5rKSl7XG4gICAgICAgICAgICAgICAgICAgICAgcmV0dXJuKFwiZWFzeSBhcHBseVwiKVxuICAgICAgICAgICAgICAgICAgICAgIFxuICAgICAgICAgICAgICAgICAgICB9ZWxzZXtcbiAgICAgICAgICAgICAgICAgICAgICBcbiAgICAgICAgICAgICAgICAgICAgICBmb3IocGxhdGFmb3JtYSBpbiBwbGF0YWZvcm1hcy5jb211bnMpe1xuICAgICAgICAgICAgICAgICAgICAgICAgXG4gICAgICAgICAgICAgICAgICAgICAgICBpZighaXMubmEoc3RyX2V4dHJhY3QodmFnYS5saW5rLCBwbGF0YWZvcm1hKSkpe1xuICAgICAgICAgICAgICAgICAgICAgICAgICBjb25kIDwtIFRcbiAgICAgICAgICAgICAgICAgICAgICAgICAgYnJlYWsoKVxuICAgICAgICAgICAgICAgICAgICAgIH1cbiAgICAgICAgICAgICAgICAgICAgfVxuICAgICAgICAgICAgICAgICAgICBcbiAgICAgICAgICAgICAgICAgICAgICBpZihjb25kKXtcbiAgICAgICAgICAgICAgICAgICAgICAgIHJldHVybihwbGF0YWZvcm1hKVxuICAgICAgICAgICAgICAgICAgICAgICAgXG4gICAgICAgICAgICAgICAgICAgICAgfWVsc2V7XG4gICAgICAgICAgICAgICAgICAgICAgICBwb3MgPC0gc3RyX2xvY2F0ZSh2YWdhLmxpbmssIGMoXCJodHRbcHNdKiUzQSUyRiUyRlwiLCBcIiUyRWNvbVwiKSlcbiAgICAgICAgICAgICAgICAgICAgICAgIGxpbmsgPC0gc3Vic3RyaW5nKHZhZ2EubGluaywgcG9zWzNdKzEsIHBvc1syXS0xKVxuICAgICAgICAgICAgICAgICAgICAgICAgcG9zMiA8LSBzdHJfbG9jYXRlKHZhZ2EubGluaywgXCIyRVwiKVxuICAgICAgICAgICAgICAgICAgICAgIFxuICAgICAgICAgICAgICAgICAgICAgICAgaWYoaXMubmEocG9zMlsyXSkpe1xuICAgICAgICAgICAgICAgICAgICAgICAgICByZXR1cm4obGluaylcbiAgICAgICAgICAgICAgICAgICAgICAgIFxuICAgICAgICAgICAgICAgICAgICAgICAgXG4gICAgICAgICAgICAgICAgICAgICAgICB9ZWxzZXtcbiAgICAgICAgICAgICAgICAgICAgICAgICAgbGluayA8LSBzdWJzdHJpbmcodmFnYS5saW5rLCBwb3MyWzJdKzEpXG4gICAgICAgICAgICAgICAgICAgICAgICAgIHJldHVybihsaW5rKVxuICAgICAgICAgICAgICAgICAgICAgICAgfVxuICAgICAgICAgICAgICAgICAgICB9XG4gICAgICAgICAgICAgICAgICB9XG4gICAgICAgICAgICAgICAgICAgIFxuICAgICAgICAgICAgICAgICAgICBcbn1cbmBgYCJ9 -->
 <pre class="r"><code>
-Extrator &lt;- function(vagas){
-                  plataformas.comuns &lt;- c(&quot;gupy&quot;, &quot;kenoby&quot;, &quot;infojobs&quot;, &quot;careers&quot;,
-                                          &quot;solides&quot;, &quot;abler&quot;, &quot;vagas&quot;, &quot;jooble&quot;)
-  
-                  for(vaga in vagas){
-                    Sys.sleep(0.3)
-                    href &lt;- html_node(vaga, &quot;a&quot;) %&gt;% html_attr(&quot;href&quot;) %&gt;% 
-                              GET() %&gt;% 
-                              read_html()
+Extrator &lt;- function(link){
+                    cond &lt;- F
+                    plataformas.comuns &lt;- c(&quot;gupy&quot;, &quot;kenoby&quot;, &quot;infojobs&quot;, &quot;careers&quot;,
+                                            &quot;solides&quot;, &quot;abler&quot;, &quot;vagas&quot;, &quot;jooble&quot;, &quot;revelo&quot;)
                     
-                    vaga.link &lt;- html_node(href, xpath = &quot;/html/body/main/section[1]/section[2]/div[1]/div[2]/a&quot;) %&gt;% 
+                    vaga.link &lt;- html_node(link, xpath = &quot;/html/body/main/section[1]/section[2]/div[1]/div[2]/a&quot;) %&gt;% 
                                   html_attr(&quot;href&quot;)
                     
                     if(is.na(vaga.link)){
-                      print(&quot;easy apply&quot;)
+                      return(&quot;easy apply&quot;)
                       
                     }else{
-                      Extrator_regex(vaga.link)
-                    }
-                  }
-}
-
-Extrator_regex &lt;- function(link){
-                    cond &lt;- F
-                    if(is.na(link)){next()}
-                    
-                    for(plataforma in plataformas.comuns){
                       
-                      if(!is.na(str_extract(link, plataforma))){
-                        cond &lt;- T
-                        break()
+                      for(plataforma in plataformas.comuns){
+                        
+                        if(!is.na(str_extract(vaga.link, plataforma))){
+                          cond &lt;- T
+                          break()
                       }
                     }
                     
-                    if(cond){
-                      return(link)
-                      
-                    }else{
-                      pos &lt;- str_locate(link, c(&quot;htt[ps]*%3A%2F%2F&quot;, &quot;%2Ecom&quot;))
-                      link &lt;- substring(link, pos[3]+1, pos[2]-1)
-                      pos2 &lt;- str_locate(link, &quot;2E&quot;)
-                      
-                      if(is.na(pos2[2])){
-                        return(link)
-                        
+                      if(cond){
+                        return(plataforma)
                         
                       }else{
-                        link &lt;- substring(link, pos2[2]+1)
-                        return(link)
-                      }
+                        pos &lt;- str_locate(vaga.link, c(&quot;htt[ps]*%3A%2F%2F&quot;, &quot;%2Ecom&quot;))
+                        link &lt;- substring(vaga.link, pos[3]+1, pos[2]-1)
+                        pos2 &lt;- str_locate(vaga.link, &quot;2E&quot;)
+                      
+                        if(is.na(pos2[2])){
+                          return(link)
+                        
+                        
+                        }else{
+                          link &lt;- substring(vaga.link, pos2[2]+1)
+                          return(link)
+                        }
                     }
+                  }
+                    
+                    
 }</code></pre>
 <!-- rnb-source-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
 </div>
-<div id="funtion-minerador" class="section level3">
-<h3>Funtion Minerador</h3>
+<div id="function-minerador" class="section level3">
+<h3>Function Minerador</h3>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuZl9UUFIgPC0gYyhcIjg2NDAwXCIsIFwiNjA0ODAwXCIsIFwiMjU5MjAwMFwiKVxuZl9FIDwtIGMoXCIxXCIsIFwiMlwiLCBcIjNcIiwgXCI0XCIsIFwiNVwiLCBcIjZcIilcblxuTWluZXJhZG9yIDwtIGZ1bmN0aW9uKHNlc3Nhbyl7XG4gICAgICAgICAgICAgICAgc2Vzc2FvLnVybCA8LSBzZXNzYW8kdXJsXG4gICAgICAgICAgICAgICAgc3RyX3N1YihzZXNzYW8udXJsLCAzOCwgMzcsIFQpIDwtIFwiZl9FPTEmZl9UUD0xJmZfVFBSPXIwJlwiXG4gICAgICAgICAgICAgICAgXG4gICAgICAgICAgICAgICAgZm9yKFRQUiBpbiBmX1RQUil7XG4gICAgICAgICAgICAgICAgICBmX1RQUi5wb3MgPC0gc3RyX2xvY2F0ZShzZXNzYW8udXJsLCBcImZfVFBSPXJbMC05XSpcIilcbiAgICAgICAgICAgICAgICAgIHN0cl9zdWIoc2Vzc2FvLnVybCwgZl9UUFIucG9zWzFdKzcsIGZfVFBSLnBvc1syXSwgVCkgPC0gVFBSXG4gICAgICAgICAgICAgICAgICBcbiAgICAgICAgICAgICAgICAgIGZvcihFIGluIGZfRSl7XG4gICAgICAgICAgICAgICAgICAgIGZfRS5wb3MgPC0gc3RyX2xvY2F0ZShzZXNzYW8udXJsLCBcImZfRT1bMC05XSpcIilcbiAgICAgICAgICAgICAgICAgICAgXG4gICAgICAgICAgICAgICAgICAgIHN0cl9zdWIoc2Vzc2FvLnVybCwgZl9FLnBvc1syXSwgZl9FLnBvc1syXSwgVCkgPC0gRVxuICAgICAgICAgICAgICAgICAgICBcbiAgICAgICAgICAgICAgICAgICAgdmFnYXMucmF3IDwtIGh0bWxfbm9kZXMoc2Vzc2FvLnVybCwgeHBhdGggPSBcIi9odG1sL2JvZHkvbWFpbi9kaXYvc2VjdGlvblsyXS91bC9saVwiKVxuICAgICAgICAgICAgICAgICAgfVxuICAgICAgICAgICAgICAgIH1cbiAgICAgICAgICAgICAgICBcbiAgICAgICAgICAgICAgICBmb3IodmFnYSBpbiB2YWdhcy5yYXcpe1xuICAgICAgICAgICAgICAgICAgU3lzLnNsZWVwKDAuNSlcbiAgICAgICAgICAgICAgICAgIFxuICAgICAgICAgICAgICAgICAgXG4gICAgICAgICAgICAgICAgICBub21lIDwtIGh0bWxfbm9kZSh2YWdhLCBcImEgc3BhblwiKSAlPiUgaHRtbF90ZXh0KClcbiAgICAgICAgICAgICAgICAgIGxvY2FsIDwtIGh0bWxfbm9kZSh2YWdhLCBcImRpdiBzcGFuXCIpICU+JSBodG1sX3RleHQoKVxuICAgICAgICAgICAgICAgICAgZW1wcmVzYSA8LSBodG1sX25vZGUodmFnYSwgXCJkaXYgaDQgYVwiKSAlPiUgaHRtbF90ZXh0KClcbiAgICAgICAgICAgICAgICAgIHRlbXBvIDwtIGh0bWxfbm9kZSh2YWdhLCBcInRpbWVcIikgJT4lIGh0bWxfdGV4dCgpXG4gICAgICAgICAgICAgICAgICBsaW5rIDwtIGh0bWxfbm9kZSh2YWdhLCBcImFcIikgJT4lIGh0bWxfYXR0cihcImhyZWZcIilcbiAgICAgICAgICAgICAgICAgIFxuICAgICAgICAgICAgICAgICAgaHJlZiA8LSBHRVQobGluaykgJT4lIHJlYWRfaHRtbCgpXG4gICAgICAgICAgICAgICAgICBcbiAgICAgICAgICAgICAgICAgIGZvdG8gPC0gaHRtbF9ub2RlKGhyZWYsIFwiYSBpbWdcIikgJT4lIGh0bWxfYXR0cihcImRhdGEtZGVsYXllZC11cmxcIilcbiAgICAgICAgICAgICAgICAgIGNhbmRpZGF0dXJhcyA8LSBodG1sX25vZGVzKGhyZWYsIFwiaDMgc3BhblwiKVs0XSAlPiUgaHRtbF90ZXh0KClcbiAgICAgICAgICAgICAgICAgIGRlc2NyaWNhby5yYXcgPC0gaHRtbF9ub2RlcyhocmVmLCBcInNlY3Rpb24gZGl2IHNlY3Rpb24gZGl2XCIpWzE0XVxuICAgICAgICAgICAgICAgICAgbml2ZWwgPC0gaHRtbF9ub2RlcyhocmVmLCBcImxpIHNwYW5cIilbM10gJT4lIGh0bWxfdGV4dCgpXG4gICAgICAgICAgICAgICAgICB0aXBvIDwtIGh0bWxfbm9kZXMoaHJlZiwgXCJsaSBzcGFuXCIpWzRdICU+JSBodG1sX3RleHQoKVxuICAgICAgICAgICAgICAgIH1cbn1cblxuQnVzY2Fkb3IoXCJQeXRob25cIiwgXCJSaW8gZGUgamFuZWlyb1wiKSAlPiUgXG4gIE1pbmVyYWRvcigpXG5gYGAifQ== -->
-<pre class="r"><code>f_TPR &lt;- c(&quot;86400&quot;, &quot;604800&quot;, &quot;2592000&quot;)
-f_E &lt;- c(&quot;1&quot;, &quot;2&quot;, &quot;3&quot;, &quot;4&quot;, &quot;5&quot;, &quot;6&quot;)
-
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuXG5NaW5lcmFkb3IgPC0gZnVuY3Rpb24oc2Vzc2FvKXtcbiAgICAgICAgICAgICAgICB1cmwgPC0gc2Vzc2FvJHVybFxuICAgICAgICAgICAgICAgIHN0cl9zdWIodXJsLCAzOCwgMzcsIFQpIDwtIFwiZl9FPTEmZl9UUD0xJmZfVFBSPXIwJlwiXG4gICAgICAgICAgICAgICAgZl9UUFIgPC0gYyhcIjg2NDAwXCIsIFwiNjA0ODAwXCIsIFwiMjU5MjAwMFwiKVxuICAgICAgICAgICAgICAgIGZfRSA8LSBjKFwiMVwiLCBcIjJcIiwgXCIzXCIsIFwiNFwiLCBcIjVcIiwgXCI2XCIpXG4gICAgICAgICAgICAgICAgXG4gICAgICAgICAgICAgICAgZm9yKFRQUiBpbiBmX1RQUil7XG4gICAgICAgICAgICAgICAgICBmX1RQUi5wb3MgPC0gc3RyX2xvY2F0ZSh1cmwsIFwiZl9UUFI9clswLTldKlwiKVxuICAgICAgICAgICAgICAgICAgc3RyX3N1Yih1cmwsIGZfVFBSLnBvc1sxXSs3LCBmX1RQUi5wb3NbMl0sIFQpIDwtIFRQUlxuICAgICAgICAgICAgICAgICAgXG4gICAgICAgICAgICAgICAgICBmb3IoRSBpbiBmX0Upe1xuICAgICAgICAgICAgICAgICAgICBmX0UucG9zIDwtIHN0cl9sb2NhdGUodXJsLCBcImZfRT1bMC05XSpcIilcbiAgICAgICAgICAgICAgICAgICAgXG4gICAgICAgICAgICAgICAgICAgIHN0cl9zdWIodXJsLCBmX0UucG9zWzJdLCBmX0UucG9zWzJdLCBUKSA8LSBFXG4gICAgICAgICAgICAgICAgICAgIHByaW50KHVybClcbiAgICAgICAgICAgICAgICAgICAgI3ZhZ2FzLnJhdyA8LSByZWFkX2h0bWwodXJsKSAlPiUgXG4gICAgICAgICAgICAgICAgICAgICMgICAgICAgICAgICAgIGh0bWxfbm9kZXMoeHBhdGggPSBcIi9odG1sL2JvZHkvbWFpbi9kaXYvc2VjdGlvblsyXS91bC9saVwiKVxuICAgICAgICAgICAgICAgIH1cbiAgICAgICAgICAgICAgfVxufVxuXG5zZXNzYW8gPC0gQnVzY2Fkb3IoXCJQeXRob25cIiwgXCJSaW8gZGUgamFuZWlyb1wiKVxuYGBgIn0= -->
+<pre class="r"><code>
 Minerador &lt;- function(sessao){
-                sessao.url &lt;- sessao$url
-                str_sub(sessao.url, 38, 37, T) &lt;- &quot;f_E=1&amp;f_TP=1&amp;f_TPR=r0&amp;&quot;
+                url &lt;- sessao$url
+                str_sub(url, 38, 37, T) &lt;- &quot;f_E=1&amp;f_TP=1&amp;f_TPR=r0&amp;&quot;
+                f_TPR &lt;- c(&quot;86400&quot;, &quot;604800&quot;, &quot;2592000&quot;)
+                f_E &lt;- c(&quot;1&quot;, &quot;2&quot;, &quot;3&quot;, &quot;4&quot;, &quot;5&quot;, &quot;6&quot;)
                 
                 for(TPR in f_TPR){
-                  f_TPR.pos &lt;- str_locate(sessao.url, &quot;f_TPR=r[0-9]*&quot;)
-                  str_sub(sessao.url, f_TPR.pos[1]+7, f_TPR.pos[2], T) &lt;- TPR
+                  f_TPR.pos &lt;- str_locate(url, &quot;f_TPR=r[0-9]*&quot;)
+                  str_sub(url, f_TPR.pos[1]+7, f_TPR.pos[2], T) &lt;- TPR
                   
                   for(E in f_E){
-                    f_E.pos &lt;- str_locate(sessao.url, &quot;f_E=[0-9]*&quot;)
+                    f_E.pos &lt;- str_locate(url, &quot;f_E=[0-9]*&quot;)
                     
-                    str_sub(sessao.url, f_E.pos[2], f_E.pos[2], T) &lt;- E
-                    
-                    vagas.raw &lt;- html_nodes(sessao.url, xpath = &quot;/html/body/main/div/section[2]/ul/li&quot;)
-                  }
+                    str_sub(url, f_E.pos[2], f_E.pos[2], T) &lt;- E
+                    print(url)
+                    #vagas.raw &lt;- read_html(url) %&gt;% 
+                    #              html_nodes(xpath = &quot;/html/body/main/div/section[2]/ul/li&quot;)
                 }
-                
-                for(vaga in vagas.raw){
-                  Sys.sleep(0.5)
-                  
-                  
-                  nome &lt;- html_node(vaga, &quot;a span&quot;) %&gt;% html_text()
-                  local &lt;- html_node(vaga, &quot;div span&quot;) %&gt;% html_text()
-                  empresa &lt;- html_node(vaga, &quot;div h4 a&quot;) %&gt;% html_text()
-                  tempo &lt;- html_node(vaga, &quot;time&quot;) %&gt;% html_text()
-                  link &lt;- html_node(vaga, &quot;a&quot;) %&gt;% html_attr(&quot;href&quot;)
-                  
-                  href &lt;- GET(link) %&gt;% read_html()
-                  
-                  foto &lt;- html_node(href, &quot;a img&quot;) %&gt;% html_attr(&quot;data-delayed-url&quot;)
-                  candidaturas &lt;- html_nodes(href, &quot;h3 span&quot;)[4] %&gt;% html_text()
-                  descricao.raw &lt;- html_nodes(href, &quot;section div section div&quot;)[14]
-                  nivel &lt;- html_nodes(href, &quot;li span&quot;)[3] %&gt;% html_text()
-                  tipo &lt;- html_nodes(href, &quot;li span&quot;)[4] %&gt;% html_text()
-                }
+              }
 }
 
-Buscador(&quot;Python&quot;, &quot;Rio de janeiro&quot;) %&gt;% 
-  Minerador()</code></pre>
+sessao &lt;- Buscador(&quot;Python&quot;, &quot;Rio de janeiro&quot;)</code></pre>
 <!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiU3VibWl0dGluZyB3aXRoICc8dW5uYW1lZD4nXG4ifQ== -->
+<pre><code>Submitting with &#39;&lt;unnamed&gt;&#39;</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuTWluZXJhZG9yKHNlc3NhbylcbmBgYCJ9 -->
+<pre class="r"><code>Minerador(sessao)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiWzFdIFwiaHR0cHM6Ly93d3cubGlua2VkaW4uY29tL2pvYnMvc2VhcmNoP2ZfRT0xJmZfVFA9MSZmX1RQUj1yODY0MDAma2V5d29yZHM9UHl0aG9uJmxvY2F0aW9uPVJpbyUyMGRlJTIwamFuZWlybyZ0cms9aG9tZXBhZ2Utam9ic2Vla2VyX2pvYnMtc2VhcmNoLWJhcl9zZWFyY2gtc3VibWl0XCJcblsxXSBcImh0dHBzOi8vd3d3LmxpbmtlZGluLmNvbS9qb2JzL3NlYXJjaD9mX0U9MiZmX1RQPTEmZl9UUFI9cjg2NDAwJmtleXdvcmRzPVB5dGhvbiZsb2NhdGlvbj1SaW8lMjBkZSUyMGphbmVpcm8mdHJrPWhvbWVwYWdlLWpvYnNlZWtlcl9qb2JzLXNlYXJjaC1iYXJfc2VhcmNoLXN1Ym1pdFwiXG5bMV0gXCJodHRwczovL3d3dy5saW5rZWRpbi5jb20vam9icy9zZWFyY2g/Zl9FPTMmZl9UUD0xJmZfVFBSPXI4NjQwMCZrZXl3b3Jkcz1QeXRob24mbG9jYXRpb249UmlvJTIwZGUlMjBqYW5laXJvJnRyaz1ob21lcGFnZS1qb2JzZWVrZXJfam9icy1zZWFyY2gtYmFyX3NlYXJjaC1zdWJtaXRcIlxuWzFdIFwiaHR0cHM6Ly93d3cubGlua2VkaW4uY29tL2pvYnMvc2VhcmNoP2ZfRT00JmZfVFA9MSZmX1RQUj1yODY0MDAma2V5d29yZHM9UHl0aG9uJmxvY2F0aW9uPVJpbyUyMGRlJTIwamFuZWlybyZ0cms9aG9tZXBhZ2Utam9ic2Vla2VyX2pvYnMtc2VhcmNoLWJhcl9zZWFyY2gtc3VibWl0XCJcblsxXSBcImh0dHBzOi8vd3d3LmxpbmtlZGluLmNvbS9qb2JzL3NlYXJjaD9mX0U9NSZmX1RQPTEmZl9UUFI9cjg2NDAwJmtleXdvcmRzPVB5dGhvbiZsb2NhdGlvbj1SaW8lMjBkZSUyMGphbmVpcm8mdHJrPWhvbWVwYWdlLWpvYnNlZWtlcl9qb2JzLXNlYXJjaC1iYXJfc2VhcmNoLXN1Ym1pdFwiXG5bMV0gXCJodHRwczovL3d3dy5saW5rZWRpbi5jb20vam9icy9zZWFyY2g/Zl9FPTYmZl9UUD0xJmZfVFBSPXI4NjQwMCZrZXl3b3Jkcz1QeXRob24mbG9jYXRpb249UmlvJTIwZGUlMjBqYW5laXJvJnRyaz1ob21lcGFnZS1qb2JzZWVrZXJfam9icy1zZWFyY2gtYmFyX3NlYXJjaC1zdWJtaXRcIlxuWzFdIFwiaHR0cHM6Ly93d3cubGlua2VkaW4uY29tL2pvYnMvc2VhcmNoP2ZfRT0xJmZfVFA9MSZmX1RQUj1yNjA0ODAwJmtleXdvcmRzPVB5dGhvbiZsb2NhdGlvbj1SaW8lMjBkZSUyMGphbmVpcm8mdHJrPWhvbWVwYWdlLWpvYnNlZWtlcl9qb2JzLXNlYXJjaC1iYXJfc2VhcmNoLXN1Ym1pdFwiXG5bMV0gXCJodHRwczovL3d3dy5saW5rZWRpbi5jb20vam9icy9zZWFyY2g/Zl9FPTImZl9UUD0xJmZfVFBSPXI2MDQ4MDAma2V5d29yZHM9UHl0aG9uJmxvY2F0aW9uPVJpbyUyMGRlJTIwamFuZWlybyZ0cms9aG9tZXBhZ2Utam9ic2Vla2VyX2pvYnMtc2VhcmNoLWJhcl9zZWFyY2gtc3VibWl0XCJcblsxXSBcImh0dHBzOi8vd3d3LmxpbmtlZGluLmNvbS9qb2JzL3NlYXJjaD9mX0U9MyZmX1RQPTEmZl9UUFI9cjYwNDgwMCZrZXl3b3Jkcz1QeXRob24mbG9jYXRpb249UmlvJTIwZGUlMjBqYW5laXJvJnRyaz1ob21lcGFnZS1qb2JzZWVrZXJfam9icy1zZWFyY2gtYmFyX3NlYXJjaC1zdWJtaXRcIlxuWzFdIFwiaHR0cHM6Ly93d3cubGlua2VkaW4uY29tL2pvYnMvc2VhcmNoP2ZfRT00JmZfVFA9MSZmX1RQUj1yNjA0ODAwJmtleXdvcmRzPVB5dGhvbiZsb2NhdGlvbj1SaW8lMjBkZSUyMGphbmVpcm8mdHJrPWhvbWVwYWdlLWpvYnNlZWtlcl9qb2JzLXNlYXJjaC1iYXJfc2VhcmNoLXN1Ym1pdFwiXG5bMV0gXCJodHRwczovL3d3dy5saW5rZWRpbi5jb20vam9icy9zZWFyY2g/Zl9FPTUmZl9UUD0xJmZfVFBSPXI2MDQ4MDAma2V5d29yZHM9UHl0aG9uJmxvY2F0aW9uPVJpbyUyMGRlJTIwamFuZWlybyZ0cms9aG9tZXBhZ2Utam9ic2Vla2VyX2pvYnMtc2VhcmNoLWJhcl9zZWFyY2gtc3VibWl0XCJcblsxXSBcImh0dHBzOi8vd3d3LmxpbmtlZGluLmNvbS9qb2JzL3NlYXJjaD9mX0U9NiZmX1RQPTEmZl9UUFI9cjYwNDgwMCZrZXl3b3Jkcz1QeXRob24mbG9jYXRpb249UmlvJTIwZGUlMjBqYW5laXJvJnRyaz1ob21lcGFnZS1qb2JzZWVrZXJfam9icy1zZWFyY2gtYmFyX3NlYXJjaC1zdWJtaXRcIlxuWzFdIFwiaHR0cHM6Ly93d3cubGlua2VkaW4uY29tL2pvYnMvc2VhcmNoP2ZfRT0xJmZfVFA9MSZmX1RQUj1yMjU5MjAwMCZrZXl3b3Jkcz1QeXRob24mbG9jYXRpb249UmlvJTIwZGUlMjBqYW5laXJvJnRyaz1ob21lcGFnZS1qb2JzZWVrZXJfam9icy1zZWFyY2gtYmFyX3NlYXJjaC1zdWJtaXRcIlxuWzFdIFwiaHR0cHM6Ly93d3cubGlua2VkaW4uY29tL2pvYnMvc2VhcmNoP2ZfRT0yJmZfVFA9MSZmX1RQUj1yMjU5MjAwMCZrZXl3b3Jkcz1QeXRob24mbG9jYXRpb249UmlvJTIwZGUlMjBqYW5laXJvJnRyaz1ob21lcGFnZS1qb2JzZWVrZXJfam9icy1zZWFyY2gtYmFyX3NlYXJjaC1zdWJtaXRcIlxuWzFdIFwiaHR0cHM6Ly93d3cubGlua2VkaW4uY29tL2pvYnMvc2VhcmNoP2ZfRT0zJmZfVFA9MSZmX1RQUj1yMjU5MjAwMCZrZXl3b3Jkcz1QeXRob24mbG9jYXRpb249UmlvJTIwZGUlMjBqYW5laXJvJnRyaz1ob21lcGFnZS1qb2JzZWVrZXJfam9icy1zZWFyY2gtYmFyX3NlYXJjaC1zdWJtaXRcIlxuWzFdIFwiaHR0cHM6Ly93d3cubGlua2VkaW4uY29tL2pvYnMvc2VhcmNoP2ZfRT00JmZfVFA9MSZmX1RQUj1yMjU5MjAwMCZrZXl3b3Jkcz1QeXRob24mbG9jYXRpb249UmlvJTIwZGUlMjBqYW5laXJvJnRyaz1ob21lcGFnZS1qb2JzZWVrZXJfam9icy1zZWFyY2gtYmFyX3NlYXJjaC1zdWJtaXRcIlxuWzFdIFwiaHR0cHM6Ly93d3cubGlua2VkaW4uY29tL2pvYnMvc2VhcmNoP2ZfRT01JmZfVFA9MSZmX1RQUj1yMjU5MjAwMCZrZXl3b3Jkcz1QeXRob24mbG9jYXRpb249UmlvJTIwZGUlMjBqYW5laXJvJnRyaz1ob21lcGFnZS1qb2JzZWVrZXJfam9icy1zZWFyY2gtYmFyX3NlYXJjaC1zdWJtaXRcIlxuWzFdIFwiaHR0cHM6Ly93d3cubGlua2VkaW4uY29tL2pvYnMvc2VhcmNoP2ZfRT02JmZfVFA9MSZmX1RQUj1yMjU5MjAwMCZrZXl3b3Jkcz1QeXRob24mbG9jYXRpb249UmlvJTIwZGUlMjBqYW5laXJvJnRyaz1ob21lcGFnZS1qb2JzZWVrZXJfam9icy1zZWFyY2gtYmFyX3NlYXJjaC1zdWJtaXRcIlxuIn0= -->
+<pre><code>[1] &quot;https://www.linkedin.com/jobs/search?f_E=1&amp;f_TP=1&amp;f_TPR=r86400&amp;keywords=Python&amp;location=Rio%20de%20janeiro&amp;trk=homepage-jobseeker_jobs-search-bar_search-submit&quot;
+[1] &quot;https://www.linkedin.com/jobs/search?f_E=2&amp;f_TP=1&amp;f_TPR=r86400&amp;keywords=Python&amp;location=Rio%20de%20janeiro&amp;trk=homepage-jobseeker_jobs-search-bar_search-submit&quot;
+[1] &quot;https://www.linkedin.com/jobs/search?f_E=3&amp;f_TP=1&amp;f_TPR=r86400&amp;keywords=Python&amp;location=Rio%20de%20janeiro&amp;trk=homepage-jobseeker_jobs-search-bar_search-submit&quot;
+[1] &quot;https://www.linkedin.com/jobs/search?f_E=4&amp;f_TP=1&amp;f_TPR=r86400&amp;keywords=Python&amp;location=Rio%20de%20janeiro&amp;trk=homepage-jobseeker_jobs-search-bar_search-submit&quot;
+[1] &quot;https://www.linkedin.com/jobs/search?f_E=5&amp;f_TP=1&amp;f_TPR=r86400&amp;keywords=Python&amp;location=Rio%20de%20janeiro&amp;trk=homepage-jobseeker_jobs-search-bar_search-submit&quot;
+[1] &quot;https://www.linkedin.com/jobs/search?f_E=6&amp;f_TP=1&amp;f_TPR=r86400&amp;keywords=Python&amp;location=Rio%20de%20janeiro&amp;trk=homepage-jobseeker_jobs-search-bar_search-submit&quot;
+[1] &quot;https://www.linkedin.com/jobs/search?f_E=1&amp;f_TP=1&amp;f_TPR=r604800&amp;keywords=Python&amp;location=Rio%20de%20janeiro&amp;trk=homepage-jobseeker_jobs-search-bar_search-submit&quot;
+[1] &quot;https://www.linkedin.com/jobs/search?f_E=2&amp;f_TP=1&amp;f_TPR=r604800&amp;keywords=Python&amp;location=Rio%20de%20janeiro&amp;trk=homepage-jobseeker_jobs-search-bar_search-submit&quot;
+[1] &quot;https://www.linkedin.com/jobs/search?f_E=3&amp;f_TP=1&amp;f_TPR=r604800&amp;keywords=Python&amp;location=Rio%20de%20janeiro&amp;trk=homepage-jobseeker_jobs-search-bar_search-submit&quot;
+[1] &quot;https://www.linkedin.com/jobs/search?f_E=4&amp;f_TP=1&amp;f_TPR=r604800&amp;keywords=Python&amp;location=Rio%20de%20janeiro&amp;trk=homepage-jobseeker_jobs-search-bar_search-submit&quot;
+[1] &quot;https://www.linkedin.com/jobs/search?f_E=5&amp;f_TP=1&amp;f_TPR=r604800&amp;keywords=Python&amp;location=Rio%20de%20janeiro&amp;trk=homepage-jobseeker_jobs-search-bar_search-submit&quot;
+[1] &quot;https://www.linkedin.com/jobs/search?f_E=6&amp;f_TP=1&amp;f_TPR=r604800&amp;keywords=Python&amp;location=Rio%20de%20janeiro&amp;trk=homepage-jobseeker_jobs-search-bar_search-submit&quot;
+[1] &quot;https://www.linkedin.com/jobs/search?f_E=1&amp;f_TP=1&amp;f_TPR=r2592000&amp;keywords=Python&amp;location=Rio%20de%20janeiro&amp;trk=homepage-jobseeker_jobs-search-bar_search-submit&quot;
+[1] &quot;https://www.linkedin.com/jobs/search?f_E=2&amp;f_TP=1&amp;f_TPR=r2592000&amp;keywords=Python&amp;location=Rio%20de%20janeiro&amp;trk=homepage-jobseeker_jobs-search-bar_search-submit&quot;
+[1] &quot;https://www.linkedin.com/jobs/search?f_E=3&amp;f_TP=1&amp;f_TPR=r2592000&amp;keywords=Python&amp;location=Rio%20de%20janeiro&amp;trk=homepage-jobseeker_jobs-search-bar_search-submit&quot;
+[1] &quot;https://www.linkedin.com/jobs/search?f_E=4&amp;f_TP=1&amp;f_TPR=r2592000&amp;keywords=Python&amp;location=Rio%20de%20janeiro&amp;trk=homepage-jobseeker_jobs-search-bar_search-submit&quot;
+[1] &quot;https://www.linkedin.com/jobs/search?f_E=5&amp;f_TP=1&amp;f_TPR=r2592000&amp;keywords=Python&amp;location=Rio%20de%20janeiro&amp;trk=homepage-jobseeker_jobs-search-bar_search-submit&quot;
+[1] &quot;https://www.linkedin.com/jobs/search?f_E=6&amp;f_TP=1&amp;f_TPR=r2592000&amp;keywords=Python&amp;location=Rio%20de%20janeiro&amp;trk=homepage-jobseeker_jobs-search-bar_search-submit&quot;</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuIGh0bWxfbm9kZXMoaHJlZiwgXCJoMyBzcGFuXCIpWzRdICU+JSBodG1sX3RleHQoKVxuXG5gYGAifQ== -->
+<pre class="r"><code> html_nodes(href, &quot;h3 span&quot;)[4] %&gt;% html_text()
+</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiWzFdIFwiXCJcbiJ9 -->
+<pre><code>[1] &quot;&quot;</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-frame-begin eyJtZXRhZGF0YSI6eyJjbGFzc2VzIjpbImRhdGEuZnJhbWUiXSwibmNvbCI6MTIsIm5yb3ciOjJ9LCJyZGYiOiJINHNJQUFBQUFBQUFBNjFWVzIvYVNCUTJDYlFxU3R0SWxmcnNQaFIxcFE2K2dNRlVRbFVhWWlXOTBLU2hsL1FGRFRNRFRMRTl6bmhNbWo3dFg5blgvUnY3djlvOUJrKzBvVm1wbFN4aDVuQjh6bmZPTitmQ3U4R25WdjFUM1RDTWJXUDdGancxRUkzYSsxR0FmTU9vYnNHUGlsRTE3dVRuVnpCNkFNSU9uSGZoWEw5Y25kY01iNFZzeWNJVXBOM1YyN1hXS001SFFSYUc1cW5DWkdFT2NrT1JNR2srQ1U3dHR1TzZ0dVA5c1FGWEl5Rk9OZHBWakNrbVNraVF2dCtjemRhUC80bi84QjBYSm1YbVN4d3pMc1ZUODRYRTMzaTQ5dHIrVVZxYytrR1lSVHptNXRHb2RPd2RwMlhPUlNaVEU4OUU2ZWpWdVdUVDBsSC9taXVWcE04c0syS1VZOFMrSms0ejVJVEdUU0lpaTBhcHhTTThZOWErMTdGZjdKMEV2VU15ZnVzRzU4amJzOEFpd2ZFbENzVk1qQjNiemgvTHRoelA2ZmxleDNGYmp1TTlaMzJuNC9RNlhydHQyNDFsZjhJVWJxais2ZG5COHRYKzhheTk5OW1idU40Ym1xcmw4Q3c3YloyZk9DZE9kSHgyeElLRFJUU2JrOFZ2VTY1c1VLNWNVUzY5NEFUSGxGT3NNb25UMHRIdlVwWVN5UWtXVFlrdlNvUTMvbHpCSDRjc0Zpajk1KytZNXdBbFozOXZ4S0pFbUR4V2JDWng2WU5jMmRLTk81SFFzUEVDMm5mZHMxL0VKTFdXbkYxWVUxaHBLTTFYR3FKNnBhRnBxamNhd2dxeDlUWkFJbE5VOEhpR3VFSnVxK1AzT3IydTMzb09FM2RFKzZUcitxMXBqeUNYK2ozVWJ2c1UrVjNpd2MrcDAvWGRDV2duRFNVaERpQ0EvVUZ3N2doWGZRaUdpN2RmTGo4ZUp0Mzl5NU85eDYwQmZCcUpTTG5pSXU1M0dna00xakNMK2pZNEwvcEpOb0hCRytmcDUxOUlzalFMRlNKWTB2Ri81UlVyQXFhL05CblhkM2FNSTZaMzlvNDJIM0dWaFVMdng5ZUM0QkI2bXJKQ2MzOG9JanltZUF6MWhEeHdvZDRkWUFWcU5nWkNDb2hFZWswZDVtdXFjQTJFRWorNzFvOUQ4SjBLR1duTlE3Z0dKa1VPZDIya2lrRVlYQnVFZ3N1UVEwbDEwQkZQTklQcWEraUdEZUozcExob2F2STNkTmxQZDFpSERIQnpLc0hsaG51OExaSzhoQUMybGYvejFqYWNLM0pEc1p2RmVYQ0t5RHlMRjhpMTh3aEZCa2FSVVpITmxieXpqbG5WbWRWMHVWZzg0N0V1VGkzRWs2dGJ1QWNzVnlTYmlZUzUwMVJBbXphVlVGamIxWWtJdFdaRnp2aitMMnBMYkg5eENBQUEifQ== -->
+<div data-pagedtable="false">
+<script data-pagedtable-source type="application/json">
+{"columns":[{"label":["Titulo"],"name":[1],"type":["fctr"],"align":["left"]},{"label":["Localidade"],"name":[2],"type":["fctr"],"align":["left"]},{"label":["Noma_da_empresa"],"name":[3],"type":["fctr"],"align":["left"]},{"label":["Data_de_postagem"],"name":[4],"type":["fctr"],"align":["left"]},{"label":["Href"],"name":[5],"type":["fctr"],"align":["left"]},{"label":["Foto_da_empresa"],"name":[6],"type":["fctr"],"align":["left"]},{"label":["Plataforma"],"name":[7],"type":["fctr"],"align":["left"]},{"label":["Numero_de_candidaturas"],"name":[8],"type":["fctr"],"align":["left"]},{"label":["Descricao.raw"],"name":[9],"type":["fctr"],"align":["left"]},{"label":["Nivel"],"name":[10],"type":["fctr"],"align":["left"]},{"label":["Tipo"],"name":[11],"type":["fctr"],"align":["left"]},{"label":["Link"],"name":[12],"type":["fctr"],"align":["left"]}],"data":[{"1":"","2":"","3":"","4":"","5":"","6":"","7":"","8":"","9":"","10":"","11":"","12":""},{"1":"Full Stack Developer (FS04122015)","2":"Rio de Janeiro, Brazil","3":"Elumini IT","4":"13 hours ago","5":"href","6":"https://media-exp1.licdn.com/dms/image/C560BAQF9Hc_O2Fq-5A/company-logo_100_100/0/1519856123115?e=1619654400&v=beta&t=SYEvKCPg4AZ5b25MdstvNYuS3qQ1Q1mPYIeFEkmghck","7":"","8":"candidaturas","9":"descricao.raw","10":"Pleno-sênior","11":"Tempo integral","12":"https://br.linkedin.com/jobs/view/full-stack-developer-fs04122015-at-elumini-outdoing-it-2368969783?refId=c7283f9c-2d89-448d-87c5-2df1782bd89b&trackingId=EFq1o2tVFNkOjyWHp7CyQA%3D%3D&position=6&pageNum=0&trk=public_jobs_job-result-card_result-card_full-click"}],"options":{"columns":{"min":{},"max":[10],"total":[12]},"rows":{"min":[10],"max":[10],"total":[2]},"pages":{}}}
+  </script>
+</div>
+<!-- rnb-frame-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
 <!-- rnb-text-end -->
 </div>
 </div>
 
-<div id="rmd-source-code">LS0tCnRpdGxlOiAiUiBOb3RlYm9vayIKb3V0cHV0OiBodG1sX25vdGVib29rCi0tLQoKIyMgQmlibGlvdGVjYXMKLSBSdmVzdAotIEh0dHIKLSBUaWR5dmVyc2UKYGBge3IsIGluY2x1ZGU9Rn0KaWYoIXJlcXVpcmUoImh0dHIiKSkgaW5zdGFsbC5wYWNrYWdlcygiaHR0ciIpCmlmKCFyZXF1aXJlKCJydmVzdCIpKSBpbnN0YWxsLnBhY2thZ2VzKCJydmVzdCIpCmlmKCFyZXF1aXJlKCJ0aWR5dmVyc2UiKSkgaW5zdGFsbC5wYWNrYWdlcygidGlkeXZlcnNlIikKYGBgCgojIyBEYXRhRnJhbWUKCioqSW5mb3JtYWNvZXMgcGFyYSBjb2xldGFyKioKCi0gVGl0dWxvIGRhIHZhZ2EKLSBMb2NhbGlkYWRlIGRhIHZhZ2EKLSBOb21lIGRhIGVtcHJlc2EKLSBEYXRhIGRlIHBvc3RhZ2VtIGRhIHZhZ2EKLSBMaW5rIGRlIHJlZmVyZW5jaWEKLSBEZXNjcmljYW8gZGEgdmFnYQotIFBsYXRhZm9ybWEgdXRpbGl6YWRhIHBhcmEgcHJvY2Vzc28gZGUgY2FuZGlkYXR1cmEKLSBGb3RvIGRhIGVtcHJlc2EKLSBOdW1lcm8gZGUgY2FuZGlkYXR1cmFzCi0gTml2ZWwgZGEgdmFnYQotIFRpcG8gZGUgY29udHJhdG8KCmBgYHtyfQp2YWdhcyA8LSBkYXRhLmZyYW1lKFRpdHVsbyA9ICIiLCAKICAgICAgICAgICAgICAgICAgICBMb2NhbGlkYWRlID0gIiIsCiAgICAgICAgICAgICAgICAgICAgTm9tYV9kYV9lbXByZXNhID0gIiIsCiAgICAgICAgICAgICAgICAgICAgRGF0YV9kZV9wb3N0YWdlbSA9ICIiLAogICAgICAgICAgICAgICAgICAgIEhyZWYgPSAiIiwKICAgICAgICAgICAgICAgICAgICBGb3RvX2RhX2VtcHJlc2EgPSAiIiwKICAgICAgICAgICAgICAgICAgICBQbGF0YWZvcm1hID0gIiIsCiAgICAgICAgICAgICAgICAgICAgTnVtZXJvX2RlX2NhbmRpZGF0dXJhcyA9ICIiLAogICAgICAgICAgICAgICAgICAgIERlc2NyaWNhby5yYXcgPSAiIiwKICAgICAgICAgICAgICAgICAgICBOaXZlbCA9ICIiLAogICAgICAgICAgICAgICAgICAgIFRpcG8gPSAiIiwKICAgICAgICAgICAgICAgICAgICBMaW5rID0gIiIpCnZhZ2FzCmBgYAoKIyMjIEZ1bmN0aW9uIEJ1c2NhZG9yIGFub25pbW8KCkJ1c2NhZG9yIGFub25pbW8gbmFvIHByZWNpc2EgZGUgY29udGEgbG9nYWRhLgpJbmljaWFsbWVudGUgbyBwcm9qZXRvIGRldmUgYXRlbnRlciBhIHBvc3NpYmlsaWRhZGUgZGUgbmFvIHByZWNpc2FyIGRlIGNvbnRhLgpgYGB7cn0KCkJ1c2NhZG9yIDwtIGZ1bmN0aW9uKFZhZ2EsIExvY2FsKSB7CiAgICAgICAgICAgICAgc2Vzc2FvIDwtIGh0bWxfc2Vzc2lvbigiaHR0cHM6Ly93d3cubGlua2VkaW4uY29tL2pvYnMiKQogICAgICAgICAgICAgIAogICAgICAgICAgICAgIGZvcm11bGFyaW8gPC0gaHRtbF9mb3JtKHNlc3NhbylbWzNdXQogICAgICAgICAgICAgIGZvcm11bGFyaW8kZmllbGRzJGtleXdvcmRzJHZhbHVlIDwtIFZhZ2EKICAgICAgICAgICAgICBmb3JtdWxhcmlvJGZpZWxkcyRsb2NhdGlvbiR2YWx1ZSA8LSBMb2NhbAogICAgICAgICAgICAgIAogICAgICAgICAgICAgIHNlc3NhbyA8LSBzdWJtaXRfZm9ybShzZXNzYW8sIGZvcm11bGFyaW8pCiAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgcmV0dXJuKHNlc3NhbykKfQpgYGAKCgojIyMgRnVuY3Rpb24gRXh0cmF0b3IgZGUgcGxhdGFmb3JtYXMKYGBge3J9CgpFeHRyYXRvciA8LSBmdW5jdGlvbih2YWdhcyl7CiAgICAgICAgICAgICAgICAgIHBsYXRhZm9ybWFzLmNvbXVucyA8LSBjKCJndXB5IiwgImtlbm9ieSIsICJpbmZvam9icyIsICJjYXJlZXJzIiwKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgInNvbGlkZXMiLCAiYWJsZXIiLCAidmFnYXMiLCAiam9vYmxlIikKICAKICAgICAgICAgICAgICAgICAgZm9yKHZhZ2EgaW4gdmFnYXMpewogICAgICAgICAgICAgICAgICAgIFN5cy5zbGVlcCgwLjMpCiAgICAgICAgICAgICAgICAgICAgaHJlZiA8LSBodG1sX25vZGUodmFnYSwgImEiKSAlPiUgaHRtbF9hdHRyKCJocmVmIikgJT4lIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICBHRVQoKSAlPiUgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIHJlYWRfaHRtbCgpCiAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgdmFnYS5saW5rIDwtIGh0bWxfbm9kZShocmVmLCB4cGF0aCA9ICIvaHRtbC9ib2R5L21haW4vc2VjdGlvblsxXS9zZWN0aW9uWzJdL2RpdlsxXS9kaXZbMl0vYSIpICU+JSAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIGh0bWxfYXR0cigiaHJlZiIpCiAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgaWYoaXMubmEodmFnYS5saW5rKSl7CiAgICAgICAgICAgICAgICAgICAgICBwcmludCgiZWFzeSBhcHBseSIpCiAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICB9ZWxzZXsKICAgICAgICAgICAgICAgICAgICAgIEV4dHJhdG9yX3JlZ2V4KHZhZ2EubGluaykKICAgICAgICAgICAgICAgICAgICB9CiAgICAgICAgICAgICAgICAgIH0KfQoKRXh0cmF0b3JfcmVnZXggPC0gZnVuY3Rpb24obGluayl7CiAgICAgICAgICAgICAgICAgICAgY29uZCA8LSBGCiAgICAgICAgICAgICAgICAgICAgaWYoaXMubmEobGluaykpe25leHQoKX0KICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICBmb3IocGxhdGFmb3JtYSBpbiBwbGF0YWZvcm1hcy5jb211bnMpewogICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICBpZighaXMubmEoc3RyX2V4dHJhY3QobGluaywgcGxhdGFmb3JtYSkpKXsKICAgICAgICAgICAgICAgICAgICAgICAgY29uZCA8LSBUCiAgICAgICAgICAgICAgICAgICAgICAgIGJyZWFrKCkKICAgICAgICAgICAgICAgICAgICAgIH0KICAgICAgICAgICAgICAgICAgICB9CiAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgaWYoY29uZCl7CiAgICAgICAgICAgICAgICAgICAgICByZXR1cm4obGluaykKICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgIH1lbHNlewogICAgICAgICAgICAgICAgICAgICAgcG9zIDwtIHN0cl9sb2NhdGUobGluaywgYygiaHR0W3BzXSolM0ElMkYlMkYiLCAiJTJFY29tIikpCiAgICAgICAgICAgICAgICAgICAgICBsaW5rIDwtIHN1YnN0cmluZyhsaW5rLCBwb3NbM10rMSwgcG9zWzJdLTEpCiAgICAgICAgICAgICAgICAgICAgICBwb3MyIDwtIHN0cl9sb2NhdGUobGluaywgIjJFIikKICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgaWYoaXMubmEocG9zMlsyXSkpewogICAgICAgICAgICAgICAgICAgICAgICByZXR1cm4obGluaykKICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgfWVsc2V7CiAgICAgICAgICAgICAgICAgICAgICAgIGxpbmsgPC0gc3Vic3RyaW5nKGxpbmssIHBvczJbMl0rMSkKICAgICAgICAgICAgICAgICAgICAgICAgcmV0dXJuKGxpbmspCiAgICAgICAgICAgICAgICAgICAgICB9CiAgICAgICAgICAgICAgICAgICAgfQp9CmBgYAoKIyMjIEZ1bnRpb24gTWluZXJhZG9yCmBgYHtyfQpmX1RQUiA8LSBjKCI4NjQwMCIsICI2MDQ4MDAiLCAiMjU5MjAwMCIpCmZfRSA8LSBjKCIxIiwgIjIiLCAiMyIsICI0IiwgIjUiLCAiNiIpCgpNaW5lcmFkb3IgPC0gZnVuY3Rpb24oc2Vzc2FvKXsKICAgICAgICAgICAgICAgIHNlc3Nhby51cmwgPC0gc2Vzc2FvJHVybAogICAgICAgICAgICAgICAgc3RyX3N1YihzZXNzYW8udXJsLCAzOCwgMzcsIFQpIDwtICJmX0U9MSZmX1RQPTEmZl9UUFI9cjAmIgogICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICBmb3IoVFBSIGluIGZfVFBSKXsKICAgICAgICAgICAgICAgICAgZl9UUFIucG9zIDwtIHN0cl9sb2NhdGUoc2Vzc2FvLnVybCwgImZfVFBSPXJbMC05XSoiKQogICAgICAgICAgICAgICAgICBzdHJfc3ViKHNlc3Nhby51cmwsIGZfVFBSLnBvc1sxXSs3LCBmX1RQUi5wb3NbMl0sIFQpIDwtIFRQUgogICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgZm9yKEUgaW4gZl9FKXsKICAgICAgICAgICAgICAgICAgICBmX0UucG9zIDwtIHN0cl9sb2NhdGUoc2Vzc2FvLnVybCwgImZfRT1bMC05XSoiKQogICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgIHN0cl9zdWIoc2Vzc2FvLnVybCwgZl9FLnBvc1syXSwgZl9FLnBvc1syXSwgVCkgPC0gRQogICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgIHZhZ2FzLnJhdyA8LSBodG1sX25vZGVzKHNlc3Nhby51cmwsIHhwYXRoID0gIi9odG1sL2JvZHkvbWFpbi9kaXYvc2VjdGlvblsyXS91bC9saSIpCiAgICAgICAgICAgICAgICAgIH0KICAgICAgICAgICAgICAgIH0KICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgZm9yKHZhZ2EgaW4gdmFnYXMucmF3KXsKICAgICAgICAgICAgICAgICAgU3lzLnNsZWVwKDAuNSkKICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICBub21lIDwtIGh0bWxfbm9kZSh2YWdhLCAiYSBzcGFuIikgJT4lIGh0bWxfdGV4dCgpCiAgICAgICAgICAgICAgICAgIGxvY2FsIDwtIGh0bWxfbm9kZSh2YWdhLCAiZGl2IHNwYW4iKSAlPiUgaHRtbF90ZXh0KCkKICAgICAgICAgICAgICAgICAgZW1wcmVzYSA8LSBodG1sX25vZGUodmFnYSwgImRpdiBoNCBhIikgJT4lIGh0bWxfdGV4dCgpCiAgICAgICAgICAgICAgICAgIHRlbXBvIDwtIGh0bWxfbm9kZSh2YWdhLCAidGltZSIpICU+JSBodG1sX3RleHQoKQogICAgICAgICAgICAgICAgICBsaW5rIDwtIGh0bWxfbm9kZSh2YWdhLCAiYSIpICU+JSBodG1sX2F0dHIoImhyZWYiKQogICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgaHJlZiA8LSBHRVQobGluaykgJT4lIHJlYWRfaHRtbCgpCiAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICBmb3RvIDwtIGh0bWxfbm9kZShocmVmLCAiYSBpbWciKSAlPiUgaHRtbF9hdHRyKCJkYXRhLWRlbGF5ZWQtdXJsIikKICAgICAgICAgICAgICAgICAgY2FuZGlkYXR1cmFzIDwtIGh0bWxfbm9kZXMoaHJlZiwgImgzIHNwYW4iKVs0XSAlPiUgaHRtbF90ZXh0KCkKICAgICAgICAgICAgICAgICAgZGVzY3JpY2FvLnJhdyA8LSBodG1sX25vZGVzKGhyZWYsICJzZWN0aW9uIGRpdiBzZWN0aW9uIGRpdiIpWzE0XQogICAgICAgICAgICAgICAgICBuaXZlbCA8LSBodG1sX25vZGVzKGhyZWYsICJsaSBzcGFuIilbM10gJT4lIGh0bWxfdGV4dCgpCiAgICAgICAgICAgICAgICAgIHRpcG8gPC0gaHRtbF9ub2RlcyhocmVmLCAibGkgc3BhbiIpWzRdICU+JSBodG1sX3RleHQoKQogICAgICAgICAgICAgICAgfQp9CgpCdXNjYWRvcigiUHl0aG9uIiwgIlJpbyBkZSBqYW5laXJvIikgJT4lIAogIE1pbmVyYWRvcigpCmBgYAoK</div>
+<div id="rmd-source-code">LS0tCnRpdGxlOiAiUiBOb3RlYm9vayIKb3V0cHV0OiBodG1sX25vdGVib29rCi0tLQoKIyMgQmlibGlvdGVjYXMKLSBSdmVzdAotIEh0dHIKLSBUaWR5dmVyc2UKYGBge3IsIGluY2x1ZGU9Rn0KaWYoIXJlcXVpcmUoImh0dHIiKSkgaW5zdGFsbC5wYWNrYWdlcygiaHR0ciIpCmlmKCFyZXF1aXJlKCJydmVzdCIpKSBpbnN0YWxsLnBhY2thZ2VzKCJydmVzdCIpCmlmKCFyZXF1aXJlKCJ0aWR5dmVyc2UiKSkgaW5zdGFsbC5wYWNrYWdlcygidGlkeXZlcnNlIikKYGBgCgojIyBEYXRhRnJhbWUKCioqSW5mb3JtYWNvZXMgcGFyYSBjb2xldGFyKioKCi0gVGl0dWxvIGRhIHZhZ2EKLSBMb2NhbGlkYWRlIGRhIHZhZ2EKLSBOb21lIGRhIGVtcHJlc2EKLSBEYXRhIGRlIHBvc3RhZ2VtIGRhIHZhZ2EKLSBMaW5rIGRlIHJlZmVyZW5jaWEKLSBEZXNjcmljYW8gZGEgdmFnYQotIFBsYXRhZm9ybWEgdXRpbGl6YWRhIHBhcmEgcHJvY2Vzc28gZGUgY2FuZGlkYXR1cmEKLSBGb3RvIGRhIGVtcHJlc2EKLSBOdW1lcm8gZGUgY2FuZGlkYXR1cmFzCi0gTml2ZWwgZGEgdmFnYQotIFRpcG8gZGUgY29udHJhdG8KCioqUHJvYmxlbWEgbmEgYXJtYXplbmFnZW0gZG8gSHJlZiBlIERlc2NyaWNhby5yYXcqKgoKKipTb2x1Y2FvIHVzYXIgbyBtZXRvZG8gdG9TdHJpbmcqKgoKYGBge3J9CnZhZ2FzIDwtIGRhdGEuZnJhbWUoVGl0dWxvID0gIiIsIAogICAgICAgICAgICAgICAgICAgIExvY2FsaWRhZGUgPSAiIiwKICAgICAgICAgICAgICAgICAgICBOb21hX2RhX2VtcHJlc2EgPSAiIiwKICAgICAgICAgICAgICAgICAgICBEYXRhX2RlX3Bvc3RhZ2VtID0gIiIsCiAgICAgICAgICAgICAgICAgICAgSHJlZiA9ICIiLAogICAgICAgICAgICAgICAgICAgIEZvdG9fZGFfZW1wcmVzYSA9ICIiLAogICAgICAgICAgICAgICAgICAgIFBsYXRhZm9ybWEgPSAiIiwKICAgICAgICAgICAgICAgICAgICBOdW1lcm9fZGVfY2FuZGlkYXR1cmFzID0gIiIsCiAgICAgICAgICAgICAgICAgICAgRGVzY3JpY2FvLnJhdyA9ICIiLAogICAgICAgICAgICAgICAgICAgIE5pdmVsID0gIiIsCiAgICAgICAgICAgICAgICAgICAgVGlwbyA9ICIiLAogICAgICAgICAgICAgICAgICAgIExpbmsgPSAiIikKdmFnYXMKYGBgCgojIyMgRnVuY3Rpb24gQnVzY2Fkb3IgYW5vbmltbwoKQnVzY2Fkb3IgYW5vbmltbyBuYW8gcHJlY2lzYSBkZSBjb250YSBsb2dhZGEuCkluaWNpYWxtZW50ZSBvIHByb2pldG8gZGV2ZSBhdGVudGVyIGEgcG9zc2liaWxpZGFkZSBkZSBuYW8gcHJlY2lzYXIgZGUgY29udGEuCmBgYHtyfQoKQnVzY2Fkb3IgPC0gZnVuY3Rpb24oVmFnYSwgTG9jYWwpIHsKICAgICAgICAgICAgICBzZXNzYW8gPC0gaHRtbF9zZXNzaW9uKCJodHRwczovL3d3dy5saW5rZWRpbi5jb20vam9icyIpCiAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgZm9ybXVsYXJpbyA8LSBodG1sX2Zvcm0oc2Vzc2FvKVtbM11dCiAgICAgICAgICAgICAgZm9ybXVsYXJpbyRmaWVsZHMka2V5d29yZHMkdmFsdWUgPC0gVmFnYQogICAgICAgICAgICAgIGZvcm11bGFyaW8kZmllbGRzJGxvY2F0aW9uJHZhbHVlIDwtIExvY2FsCiAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgc2Vzc2FvIDwtIHN1Ym1pdF9mb3JtKHNlc3NhbywgZm9ybXVsYXJpbykKICAgICAgICAgICAgICAKICAgICAgICAgICAgICByZXR1cm4oc2Vzc2FvKQp9CmBgYAoKCiMjIyBGdW5jdGlvbiBFeHRyYXRvciBkZSBwbGF0YWZvcm1hcwpgYGB7cn0KCkV4dHJhdG9yIDwtIGZ1bmN0aW9uKGxpbmspewogICAgICAgICAgICAgICAgICAgIGNvbmQgPC0gRgogICAgICAgICAgICAgICAgICAgIHBsYXRhZm9ybWFzLmNvbXVucyA8LSBjKCJndXB5IiwgImtlbm9ieSIsICJpbmZvam9icyIsICJjYXJlZXJzIiwKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAic29saWRlcyIsICJhYmxlciIsICJ2YWdhcyIsICJqb29ibGUiLCAicmV2ZWxvIikKICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICB2YWdhLmxpbmsgPC0gaHRtbF9ub2RlKGxpbmssIHhwYXRoID0gIi9odG1sL2JvZHkvbWFpbi9zZWN0aW9uWzFdL3NlY3Rpb25bMl0vZGl2WzFdL2RpdlsyXS9hIikgJT4lIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgaHRtbF9hdHRyKCJocmVmIikKICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICBpZihpcy5uYSh2YWdhLmxpbmspKXsKICAgICAgICAgICAgICAgICAgICAgIHJldHVybigiZWFzeSBhcHBseSIpCiAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICB9ZWxzZXsKICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgZm9yKHBsYXRhZm9ybWEgaW4gcGxhdGFmb3JtYXMuY29tdW5zKXsKICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgIGlmKCFpcy5uYShzdHJfZXh0cmFjdCh2YWdhLmxpbmssIHBsYXRhZm9ybWEpKSl7CiAgICAgICAgICAgICAgICAgICAgICAgICAgY29uZCA8LSBUCiAgICAgICAgICAgICAgICAgICAgICAgICAgYnJlYWsoKQogICAgICAgICAgICAgICAgICAgICAgfQogICAgICAgICAgICAgICAgICAgIH0KICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgIGlmKGNvbmQpewogICAgICAgICAgICAgICAgICAgICAgICByZXR1cm4ocGxhdGFmb3JtYSkKICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICB9ZWxzZXsKICAgICAgICAgICAgICAgICAgICAgICAgcG9zIDwtIHN0cl9sb2NhdGUodmFnYS5saW5rLCBjKCJodHRbcHNdKiUzQSUyRiUyRiIsICIlMkVjb20iKSkKICAgICAgICAgICAgICAgICAgICAgICAgbGluayA8LSBzdWJzdHJpbmcodmFnYS5saW5rLCBwb3NbM10rMSwgcG9zWzJdLTEpCiAgICAgICAgICAgICAgICAgICAgICAgIHBvczIgPC0gc3RyX2xvY2F0ZSh2YWdhLmxpbmssICIyRSIpCiAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgaWYoaXMubmEocG9zMlsyXSkpewogICAgICAgICAgICAgICAgICAgICAgICAgIHJldHVybihsaW5rKQogICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgIH1lbHNlewogICAgICAgICAgICAgICAgICAgICAgICAgIGxpbmsgPC0gc3Vic3RyaW5nKHZhZ2EubGluaywgcG9zMlsyXSsxKQogICAgICAgICAgICAgICAgICAgICAgICAgIHJldHVybihsaW5rKQogICAgICAgICAgICAgICAgICAgICAgICB9CiAgICAgICAgICAgICAgICAgICAgfQogICAgICAgICAgICAgICAgICB9CiAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgCn0KYGBgCgojIyMgRnVuY3Rpb24gTWluZXJhZG9yCmBgYHtyfQoKTWluZXJhZG9yIDwtIGZ1bmN0aW9uKHNlc3Nhbyl7CiAgICAgICAgICAgICAgICB1cmwgPC0gc2Vzc2FvJHVybAogICAgICAgICAgICAgICAgc3RyX3N1Yih1cmwsIDM4LCAzNywgVCkgPC0gImZfRT0xJmZfVFA9MSZmX1RQUj1yMCYiCiAgICAgICAgICAgICAgICBmX1RQUiA8LSBjKCI4NjQwMCIsICI2MDQ4MDAiLCAiMjU5MjAwMCIpCiAgICAgICAgICAgICAgICBmX0UgPC0gYygiMSIsICIyIiwgIjMiLCAiNCIsICI1IiwgIjYiKQogICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICBmb3IoVFBSIGluIGZfVFBSKXsKICAgICAgICAgICAgICAgICAgZl9UUFIucG9zIDwtIHN0cl9sb2NhdGUodXJsLCAiZl9UUFI9clswLTldKiIpCiAgICAgICAgICAgICAgICAgIHN0cl9zdWIodXJsLCBmX1RQUi5wb3NbMV0rNywgZl9UUFIucG9zWzJdLCBUKSA8LSBUUFIKICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgIGZvcihFIGluIGZfRSl7CiAgICAgICAgICAgICAgICAgICAgZl9FLnBvcyA8LSBzdHJfbG9jYXRlKHVybCwgImZfRT1bMC05XSoiKQogICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgIHN0cl9zdWIodXJsLCBmX0UucG9zWzJdLCBmX0UucG9zWzJdLCBUKSA8LSBFCiAgICAgICAgICAgICAgICAgICAgcHJpbnQodXJsKQogICAgICAgICAgICAgICAgICAgICN2YWdhcy5yYXcgPC0gcmVhZF9odG1sKHVybCkgJT4lIAogICAgICAgICAgICAgICAgICAgICMgICAgICAgICAgICAgIGh0bWxfbm9kZXMoeHBhdGggPSAiL2h0bWwvYm9keS9tYWluL2Rpdi9zZWN0aW9uWzJdL3VsL2xpIikKICAgICAgICAgICAgICAgIH0KICAgICAgICAgICAgICB9Cn0KCnNlc3NhbyA8LSBCdXNjYWRvcigiUHl0aG9uIiwgIlJpbyBkZSBqYW5laXJvIikKTWluZXJhZG9yKHNlc3NhbykKYGBgCmBgYHtyfQp1cmwgPC0gImh0dHBzOi8vd3d3LmxpbmtlZGluLmNvbS9qb2JzL3NlYXJjaD9mX0U9NCZmX1RQPTEmZl9UUFI9cjI1OTIwMDAma2V5d29yZHM9UHl0aG9uJmxvY2F0aW9uPVJpbyUyMGRlJTIwamFuZWlybyZ0cms9aG9tZXBhZ2Utam9ic2Vla2VyX2pvYnMtc2VhcmNoLWJhcl9zZWFyY2gtc3VibWl0IgoKdmFnYXMucmF3IDwtIHJlYWRfaHRtbCh1cmwpICU+JSAKICAgICAgICAgICAgICAgIGh0bWxfbm9kZXMoeHBhdGggPSAiL2h0bWwvYm9keS9tYWluL2Rpdi9zZWN0aW9uWzJdL3VsL2xpIikKCmZvcih2YWdhIGluIHZhZ2FzLnJhdyl7CiAgICBTeXMuc2xlZXAoMC41KQoKICAgIG5vbWUgPC0gaHRtbF9ub2RlKHZhZ2EsICJhIHNwYW4iKSAlPiUgaHRtbF90ZXh0KCkKICAgIGxvY2FsIDwtIGh0bWxfbm9kZSh2YWdhLCAiZGl2IHNwYW4iKSAlPiUgaHRtbF90ZXh0KCkKICAgIGVtcHJlc2EgPC0gaHRtbF9ub2RlKHZhZ2EsICJkaXYgaDQgYSIpICU+JSBodG1sX3RleHQoKQogICAgdGVtcG8gPC0gaHRtbF9ub2RlKHZhZ2EsICJ0aW1lIikgJT4lIGh0bWxfdGV4dCgpCiAgICBwcmludCh0ZW1wbykKICAgIGxpbmsgPC0gaHRtbF9ub2RlKHZhZ2EsICJhIikgJT4lIGh0bWxfYXR0cigiaHJlZiIpCiAgICAKICAgIGhyZWYgPC0gR0VUKGxpbmspICU+JSByZWFkX2h0bWwoKQogICAgI3BsYXRhZm9ybWEgPC0gRXh0cmF0b3IoaHJlZikKICAgIGZvdG8gPC0gaHRtbF9ub2RlKGhyZWYsICJhIGltZyIpICU+JSBodG1sX2F0dHIoImRhdGEtZGVsYXllZC11cmwiKQogICAgcHJpbnQoZm90bykKICAgICNjYW5kaWRhdHVyYXMgPC0gaHRtbF9ub2RlcyhocmVmLCAiaDMgc3BhbiIpWzRdICU+JSBodG1sX3RleHQoKQogICAgZGVzY3JpY2FvLnJhdyA8LSBodG1sX25vZGVzKGhyZWYsICJzZWN0aW9uIGRpdiBzZWN0aW9uIGRpdiIpWzE0XSAlPiUgdG9TdHJpbmcoKQogICAgbml2ZWwgPC0gaHRtbF9ub2RlcyhocmVmLCAibGkgc3BhbiIpWzNdICU+JSBodG1sX3RleHQoKQogICAgdGlwbyA8LSBodG1sX25vZGVzKGhyZWYsICJsaSBzcGFuIilbNF0gJT4lIGh0bWxfdGV4dCgpCiAgICAKfQpgYGAKCgpgYGB7cn0KcmJpbmQodmFnYXMsIAogICAgICBkYXRhLmZyYW1lKAogICAgICAgICAgICAgICAgVGl0dWxvID0gbm9tZSwgCiAgICAgICAgICAgICAgICBMb2NhbGlkYWRlID0gbG9jYWwsCiAgICAgICAgICAgICAgICBOb21hX2RhX2VtcHJlc2EgPSBlbXByZXNhLAogICAgICAgICAgICAgICAgRGF0YV9kZV9wb3N0YWdlbSA9IHRlbXBvLAogICAgICAgICAgICAgICAgSHJlZiA9ICJocmVmIiwKICAgICAgICAgICAgICAgIEZvdG9fZGFfZW1wcmVzYSA9IGZvdG8sCiAgICAgICAgICAgICAgICBQbGF0YWZvcm1hID0gIiIsCiAgICAgICAgICAgICAgICBOdW1lcm9fZGVfY2FuZGlkYXR1cmFzID0gImNhbmRpZGF0dXJhcyIsCiAgICAgICAgICAgICAgICBEZXNjcmljYW8ucmF3ID0gImRlc2NyaWNhby5yYXciLAogICAgICAgICAgICAgICAgTml2ZWwgPSBuaXZlbCwKICAgICAgICAgICAgICAgIFRpcG8gPSB0aXBvLAogICAgICAgICAgICAgICAgTGluayA9IGxpbmspKQoKdGVzdGUgPC0gaHRtbF9ub2RlcyhocmVmLCAic2VjdGlvbiBkaXYgc2VjdGlvbiBkaXYiKVsxNF0KCmBgYAoK</div>
 
 
 
